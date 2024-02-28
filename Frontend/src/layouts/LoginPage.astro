@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="flex bg-slate-950 h-20 w-lvw gap-80">
+			<img class="h-20 ml-14" src="src/img/logo.png" alt="Logo de la empresa">
+			<span class="h-20 ml-20 text-white text-2xl pt-6">
+				SISTEMA DE COMPRA DE LIBROS
+			</span>
+		</header>
+		<section class="flex h-dvh items-center justify-center">
+			<img class="absolute -z-10 h-screen w-screen" src="src/img/Fondo.jpg" alt="">
+			<slot />
+		</section>
+		<footer class="bg-slate-950 text-white grid h-20 py-5 justify-center text-center">
+			<span>
+				Desarrollado por: Armando Diaz
+			</span>
+		</footer>
+	</body>
+</html>
+
+<style>
+	section{
+		height: calc(100lvh - 160px);
+	}
+</style>

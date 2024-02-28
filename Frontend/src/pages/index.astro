@@ -1,0 +1,14 @@
+---
+import LoginPage from '../layouts/LoginPage.astro';	
+import FormLogin from '../components/FormLogin.tsx';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<LoginPage title='Página principal'>
+	<ViewTransitions/>
+	<FormLogin client:visible/>
+</LoginPage>
+
+<style>
+	
+</style>

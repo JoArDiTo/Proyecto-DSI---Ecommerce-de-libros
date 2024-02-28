@@ -1,0 +1,10 @@
+---
+import LoginPage from '../layouts/LoginPage.astro';	
+import CreateUserForm from '../components/FormCreateUser.tsx';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<LoginPage title='Página principal'>
+    <ViewTransitions/>
+<CreateUserForm client:visible/>
+</LoginPage>

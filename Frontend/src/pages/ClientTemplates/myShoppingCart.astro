@@ -1,0 +1,10 @@
+---
+import UserLayout from '../../layouts/UserLayout.astro';
+//import GetShoppingCart from '../../components/ShopComponents/GetShoppingCart';
+import GetShoppingCart from '../../components/ShopComponents/GetShoppingCart';
+---
+
+<UserLayout title='Home'>
+    <GetShoppingCart client:visible/>
+</UserLayout>
+

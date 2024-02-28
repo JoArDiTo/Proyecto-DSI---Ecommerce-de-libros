@@ -1,0 +1,102 @@
+---
+import UserLayout from "../../layouts/UserLayout.astro";
+---
+
+<UserLayout title="Home">
+    <h1 class="w-full text-center text-4xl py-5 font-semibold">BIENVENIDO A NUESTRA TIENDA VIRTUAL</h1>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu1.jpg"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu2.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu3.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu4.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu5.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu6.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <img
+                    src="../../../src/img/BooksToHome/BookMenu7.webp"
+                    alt="slide 1"
+                />
+            </div>
+            <div class="slide">
+                <div class="w-full h-full text-center bg-slate-700 opacity-35 hover:opacity-55 transition-all">
+                    <a class="text-black" href="../ClientTemplates/lookCategories">VISITA NUESTRAS CATEGORÍA</>
+                </div>
+            </div>
+        </div>
+    </div>
+</UserLayout>
+
+<style>
+    .slider {
+        width: 75vw;
+        height: auto;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slider .slide-track {
+        display: flex;
+        column-gap: 10px;
+        animation: scroll 20s linear infinite;
+        -webkit-animation: scroll 20s linear infinite;
+        width: calc(200px * 16);
+    }
+
+    .slider .slide {
+        width: 200px;
+    }
+
+    .slider .slide img {
+        width: 100%;
+    }
+
+    .slider .slide a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scroll {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+        100% {
+            -webkit-transform: translateX(calc(-200px * 8));
+            transform: translateX(calc(-200px * 8));
+        }
+    }
+</style>

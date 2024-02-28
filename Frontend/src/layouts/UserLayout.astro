@@ -1,0 +1,45 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="flex bg-slate-950 h-20 justify-between items-center px-10">
+			<div class="w-64">
+				<img src="../src/img/logo.png" alt="logo">
+			</div>
+			<nav class="flex text-white gap-24 text-xl">
+				<a href="../ClientTemplates/home">Inicio</a>
+				<a href="../ClientTemplates/lookCategories">Catálogo de libros</a>
+				<a href="../ClientTemplates/myShoppingCart">Mi carrito</a>
+				<a href="../ClientTemplates/acount">Mi cuenta</a>
+				<a href="../../" onclick=localStorage.clear()>Log Out</a>
+			</nav>
+		</header>
+		<section class="main bg-slate-200 px-8 py-5 overflow-auto h-lvh">
+			<slot />
+		</section>
+	</body>
+</html>
+<style>
+	section {
+		height: calc(100lvh - 80px);
+	}
+	a:hover{
+		color: skyblue;
+		font: bold;
+	}
+</style>

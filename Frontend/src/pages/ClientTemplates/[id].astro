@@ -1,0 +1,48 @@
+---
+import UserLayout from '../../layouts/UserLayout.astro';
+import { type Book, type Category, getBookById } from '../../APIs/APIBooks';
+import AddBookToCart from '../../components/ShopComponents/AddBookToCart';
+
+export const prerender = false
+
+const { id } = Astro.params;
+
+let book;
+
+if(id){
+    book = await getBookById(id)
+}
+
+---
+
+<UserLayout title={book.title}>
+    <div class="p-8">
+        <div class="flex gap-x-20 bg-slate-500 rounded-3xl">
+            <img src={book.image} alt="libro" width="280px">
+            <div class="flex-col">
+                <h1 class="text-xl font-bold">TÍTULO:</h1>
+                <h1>{book.title}</h1>
+                <h1 class="text-xl font-bold">AUTOR:</h1>
+                <p>{book.author}</p>
+                <h1 class="text-xl font-bold">DESCRIPCIÓN:</h1>
+                <p>{book.description}</p>
+                <h1 class="text-xl font-bold">PRECIO:</h1>
+                <p>{book.price}</p>
+                <h1 class="text-xl font-bold">STOCK:</h1>
+                <p>{book.stock}</p>
+                <h1 class="text-xl font-bold">CATEGORÍA(S):</h1>
+                <div class="flex gap-x-2">
+                    {book.categories.map((category: Category) => (
+                        <span class="rounded-md p-1 bg-lime-500">{category.name}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+        <div>
+            <AddBookToCart book={book} client:visible/>
+        </div>
+        
+    </div>
+</UserLayout>
+
+
