@@ -50,8 +50,6 @@ const UserProfile = () => {
       ...prevState,
       [name]: value
     }));
-
-    console.log(userData)
   };
 
   const handleInputChangePerson = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -63,7 +61,6 @@ const UserProfile = () => {
         [name]: value
       }
     }));
-    console.log(userData)
   }
   
 
@@ -91,16 +88,12 @@ const UserProfile = () => {
       user_permissions: userData.user_permissions
     };
     
-    console.log(personUpdate);
     
     const response = await updateData(`persons/${userData.person.id}`, personUpdate);
     if(response){
-      console.log('Person actualizado');
       const response2 = await updateData(`users/${userData.id}`,UserUpdated);
       console.log(response2);
       if(response2){
-        console.log('User actualizado');
-        console.log('Datos actualizados');
         setIsEditing(false);
       } else {
         console.log('Error al actualizar datos de USER');
@@ -108,16 +101,13 @@ const UserProfile = () => {
     } else {
       console.log('Error al actualizar datos de PERSON');
     }
-    console.log(UserUpdated);
-    
-    
   };
 
   return (
     <div className='flex justify-center py-5'>
       <div className='py-5 flex flex-col items-center border-2 bg-blue-500 w-80 h-80'>
         <h2 className='text-black text-2xl'>{userData.id}</h2>
-        <h1><img className="w-52 h-52" src="../src/img/user.png" alt="tilinadas" /></h1>
+        <h1><img className="w-52 h-52" src="../src/img/user.webp" alt="tilinadas" /></h1>
         <input
           className='w-60 h-11 text-2xl text-center bg-transparent'
           type="text"

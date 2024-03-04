@@ -99,7 +99,6 @@ export async function updateData(url: String, data: User | Person) {
         },
         body: JSON.stringify(data)
     });
-    console.log(response)
     return response.ok;
 
 }
@@ -114,7 +113,6 @@ export async function createData(url: String, data: User | Person) {
             },
             body: JSON.stringify(data)
         });
-        console.log(response)
         return response.ok;
     } catch (e) {
         console.log("Error al crear usuario", e)

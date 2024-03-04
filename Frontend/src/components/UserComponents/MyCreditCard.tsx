@@ -50,7 +50,6 @@ export const MyCreditCard = () => {
 
         const response = await addCreditCard(cartToAdd);
         if(response){
-            console.log('Tarjeta añadida');
             window.location.reload();
         }
         

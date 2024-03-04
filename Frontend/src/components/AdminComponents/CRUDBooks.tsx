@@ -25,7 +25,7 @@ const crudBooksToPage = () => {
         description: '',
         price: 0,
         stock: 0,
-        image: '../src/img/bookImageDefault.png',
+        image: '../src/img/bookImageDefault.webp',
         isActive: true
     });
     const [category, setCategory] = useState<Category>({
@@ -73,7 +73,6 @@ const crudBooksToPage = () => {
     //------AÑADIR CATEGORY BOOK------------------
     const addBook = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log("Añadiendo libro");
         const newBook: Book = {
             id: generateIdBook(),
             title: book.title,
@@ -85,7 +84,6 @@ const crudBooksToPage = () => {
             isActive: true,
         };
 
-        console.log(newBook);
         addNewBook(newBook).then((response) => {
             if (response) {
                 getBooksToBuy().then((response) => {
@@ -97,7 +95,7 @@ const crudBooksToPage = () => {
                         description: '',
                         price: 0,
                         stock: 0,
-                        image: '../src/img/bookImageDefault.png',
+                        image: '../src/img/bookImageDefault.webp',
                         isActive: true
                     });
                 });
@@ -112,7 +110,6 @@ const crudBooksToPage = () => {
 
         getBookToEdit(id).then((response) => {
             if (response) {
-                console.log(response);
                 setBook(response);
                 setUpdate(true);
             }
@@ -129,7 +126,7 @@ const crudBooksToPage = () => {
                 description: '',
                 price: 0,
                 stock: 0,
-                image: '../src/img/bookImageDefault.png',
+                image: '../src/img/bookImageDefault.webp',
                 isActive: true
 
             });
@@ -162,7 +159,7 @@ const crudBooksToPage = () => {
                         description: '',
                         price: 0,
                         stock: 0,
-                        image: '../src/img/bookImageDefault.png',
+                        image: '../src/img/bookImageDefault.webp',
                         isActive: true
 
                     });
@@ -170,17 +167,14 @@ const crudBooksToPage = () => {
                 });
             }
         });
-        console.log(bookToUpdate)
     }
 
     //--------------------------------------------
 
     //----------CAMBIAR ESTADO DEL BOOK-----------
     const handleStateBook = (id: string) => {
-        console.log(id);
         getBookToEdit(id).then((response) => {
             if (response) {
-                console.log(response);
                 response.isActive = !response.isActive;
                 updateBook(response).then((response) => {
                     if (response) {
@@ -206,14 +200,12 @@ const crudBooksToPage = () => {
     //------AÑADIR CATEGORY BOOK------------------ 
     const addCategoryBook = (bookId: string, categoryId: string) => {
         const empty = verifyNewCategoryBook(bookId, categoryId);
-        console.log(empty);
         if (!empty) {
             const newCategoryBook: CategoryBook = {
                 id: generateIdCategoryBook(),
                 book: bookId,
                 category: categoryId
             };
-            console.log(newCategoryBook);
             addNewCategoryBook(newCategoryBook).then((response) => {
                 if (response) {
                     getCategoriesBook().then((response) => {
@@ -270,7 +262,6 @@ const crudBooksToPage = () => {
             id: generateIdCategory(),
             name: category.name
         };
-        console.log(newCategory);
 
         addNewCategory(newCategory).then((response) => {
             if (response) {
@@ -294,7 +285,7 @@ const crudBooksToPage = () => {
     }
 
     useEffect(() => {
-        console.log(idCategoryToDelete);
+        
     }, [idCategoryToDelete]);
 
     const CancelDeleteCategory = () => {
@@ -306,7 +297,6 @@ const crudBooksToPage = () => {
         setDeleteConfirmation(false);
         getCategoryBy(id).then((response) => {
             if (response) {
-                console.log(response);
                 deleteCategoryBy(response).then((response) => {
                     if (response) {
                         getCategories().then((response) => {
