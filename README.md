@@ -30,4 +30,17 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    ```bash
    git clone git@github.com:JoArDiTo-DEV/Proyecto_CASOR.git
    ```
-2.  TODO: AGREGAR LOS COMANDOS.
+2.  Abrir nuestro editor de código y abrir la terminal
+
+3. Dirigirnos a la carpeta Backend.
+   ```bash
+   cd Backend/
+   ```
+4. Descargar virtualenv de python usando pip
+   ```bash
+   pip install virtualenv
+   ```
+5. Crear un entorno virtual a la carpeta backend
+   ```bash
+   virtualenv venv
+   ```
