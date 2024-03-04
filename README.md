@@ -57,5 +57,50 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
 
 8. En nuestro base de datos MySQL, creamos una base de datos llamada librería.
    ```sql
-   CREATE DATABASE libreriadb;
+   CREATE DATABASE <Nombre_de_la_base_de_datos>;
+   ```
+
+9. Ahora, en la carpeta Backend, vamos a migrar nuestros modelos a la base de datos.
+
+   ```bash
+   python manage.py migrate
+   ```
+
+10. Configurar la base de datos en el archivo settings.py
+   ```python
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '_nombre_de_la_base_de_datos_',
+        'USER': '_nombre_del_usuario_',
+        'PASSWORD': '_contraseña_del_usuario_',
+        'HOST': '_host_',
+        'PORT': '_puerto_'
+    }
+   }
+   ```
+
+11. Creamos un superusuario (usuario que usará el administrador de la librería, se realizará por única vez al ser solo uno quien administra la librería). Tener en cuenta que la contraseña debe tener un mínimo de 8 caracteres diferentes al nombre del usuario, debe contener entre letras, números y como mínimo un caracter especial.
+
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+   ```bash
+   Email: "Ingrese un gmail. Ejemplo: admin@gmail.com"
+   Id: "Ingrese una id. Ejemplo: admin1"
+   Username: "Ingrese un nombre de usuario. Ejemplo: admin"
+   Password: "Ingrese su contraseña"
+   Password (again): "Ingrese su contraseña"
+   Superuser created successfully.
+   ```
+
+
+
+   ```bash
+   "En caso la contraseña no respeta lo requerido"
+   This password is too short. It must contain at least 8 characters.
+   This password is too common.
+   This password is entirely numeric.
+   Bypass password validation and create user anyway? [y/N]: "Confirmamos(y) o cancelamos(N) y reitentamos"
    ```
