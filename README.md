@@ -36,11 +36,26 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    ```bash
    cd Backend/
    ```
-4. Descargar virtualenv de python usando pip
+4. Descargar virtualenv de python usando pip.
    ```bash
    pip install virtualenv
    ```
-5. Crear un entorno virtual a la carpeta backend
+5. Crear un entorno virtual a la carpeta backend.
    ```bash
    virtualenv venv
+   ```
+
+6. Activar el entorno virtual para la instalación de dependencias.
+   ```bash
+   source venv/Scripts/activate
+   ```
+
+7. Instalar las siguientes dependencias dependencias.
+   ```bash
+   pip install django djangorestframework djangorestframework-jwt setuptools django-cors-headers djangorestframework-simplejwt coreapi mysqlclient
+   ```
+
+8. En nuestro base de datos MySQL, creamos una base de datos llamada librería.
+   ```sql
+   CREATE DATABASE libreriadb;
    ```
