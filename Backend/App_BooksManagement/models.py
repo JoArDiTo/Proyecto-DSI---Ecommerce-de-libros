@@ -18,7 +18,7 @@ class Book(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.IntegerField()
-    image = models.CharField(max_length=300, default="../src/img/bookImageDefault.png")
+    image = models.CharField(max_length=300, default="../src/img/bookImageDefault.webp")
     isActive = models.BooleanField(default=True)
 
     def __str__(self):
