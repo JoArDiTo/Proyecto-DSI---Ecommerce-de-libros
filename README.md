@@ -50,7 +50,7 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    source venv/Scripts/activate
    ```
 
-7. Instalar las siguientes dependencias dependencias.
+7. Instalar las siguientes dependencias.
    ```bash
    pip install django djangorestframework djangorestframework-jwt setuptools django-cors-headers djangorestframework-simplejwt coreapi mysqlclient
    ```
@@ -60,13 +60,7 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    CREATE DATABASE <Nombre_de_la_base_de_datos>;
    ```
 
-9. Ahora, en la carpeta Backend, vamos a migrar nuestros modelos a la base de datos.
-
-   ```bash
-   python manage.py migrate
-   ```
-
-10. Configurar la base de datos en el archivo settings.py
+9. Configurar la base de datos en el archivo settings.py
    ```python
    DATABASES = {
     'default': {
@@ -79,6 +73,12 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
     }
    }
    ```
+10. Ahora, en la carpeta Backend, vamos a migrar nuestros modelos a la base de datos.
+
+   ```bash
+   python manage.py migrate
+   ```
+
 
 11. Creamos un superusuario (usuario que usará el administrador de la librería, se realizará por única vez al ser solo uno quien administra la librería). Tener en cuenta que la contraseña debe tener un mínimo de 8 caracteres diferentes al nombre del usuario, debe contener entre letras, números y como mínimo un caracter especial.
 
@@ -95,12 +95,15 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    Superuser created successfully.
    ```
 
-
-
    ```bash
    "En caso la contraseña no respeta lo requerido"
    This password is too short. It must contain at least 8 characters.
    This password is too common.
    This password is entirely numeric.
    Bypass password validation and create user anyway? [y/N]: "Confirmamos(y) o cancelamos(N) y reitentamos"
+   ```
+
+12. Correr el backend con el comando.
+   ```bash
+   python manage.py runserver
    ```
