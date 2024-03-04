@@ -28,7 +28,7 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
 ## Instalación
 1. Clona este repositorio.
    ```bash
-   git clone git@github.com:JoArDiTo-DEV/Proyecto_CASOR.git
+   git clone git@github.com:JoArDiTo-DEV/Proyecto-DSI---Ecommerce-de-libros.git
    ```
 2.  Abrir nuestro editor de código y abrir la terminal
 
