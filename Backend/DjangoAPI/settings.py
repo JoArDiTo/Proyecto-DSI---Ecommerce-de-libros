@@ -90,14 +90,13 @@ WSGI_APPLICATION = 'DjangoAPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libreriadb',
+        'NAME': 'libreria',
         'USER': 'root',
-        'PASSWORD': '74582614',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

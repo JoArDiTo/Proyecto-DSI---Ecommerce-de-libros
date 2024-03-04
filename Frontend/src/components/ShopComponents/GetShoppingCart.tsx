@@ -80,7 +80,6 @@ const GetShoppingCartByUser: React.FC = () => {
       // Aquí usamos 'i' en lugar de 'item'
       addItemCart(item).then((data) => {
         if (data) {
-          console.log('Compra realizada con éxito');
           // Actualizar el stock de los libros
           book.stock -= book.quantity;
           //crear instancia de Book
@@ -96,16 +95,9 @@ const GetShoppingCartByUser: React.FC = () => {
           }
 
           updateBook(m).then((data) => {
-            if (data) {
-              console.log('Stock actualizado');
-            } else {
-              console.log('Error al actualizar el stock');
-            }
           });
           window.location.reload();
           localStorage.removeItem('cart');
-        } else {
-          console.log('Compra rechazada');
         }
       });
     });

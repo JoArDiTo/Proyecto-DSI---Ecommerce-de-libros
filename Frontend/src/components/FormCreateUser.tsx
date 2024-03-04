@@ -82,11 +82,9 @@ const CreateUserForm = () => {
           phone: phone,
         };
 
-        console.log(person);
         const response = await createData('persons', person);
 
         if (response) {
-          console.log('Person actualizado');
           const user: User = {
             id: generateIdUser(),
             password: password,
@@ -101,18 +99,13 @@ const CreateUserForm = () => {
             user_permissions: [],
           };
 
-          console.log(user);
           
           const response2 = await createData('users', user);
-          console.log(response2);
           if (response2) {
-            console.log('User actualizado');
-            console.log('Datos actualizados');
             const shoppingCart: ShoppingCart = {
               id: generateIdShoppingCart(),
               user: user.id,
             };
-            console.log(shoppingCart);
             const response3 = await createShoppingCart(shoppingCart);
             if (response3) {
               console.log('Carrito creado');
