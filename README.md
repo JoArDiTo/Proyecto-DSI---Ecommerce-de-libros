@@ -103,7 +103,23 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
    Bypass password validation and create user anyway? [y/N]: "Confirmamos(y) o cancelamos(N) y reitentamos"
    ```
 
-12. Correr el backend con el comando.
+12. Corremos el backend (dejamos correr para que funcione el programa)
    ```bash
    python manage.py runserver
    ```
+
+13. Para el lado del frontend, abrimos otra terminal y nos dirigimos a la carpeta Frontend
+   ```bash
+   cd Frontend/
+   ```
+
+14. Instalamos la dependecia npm que requiera el frontend
+   ```bash
+   npm install
+   
+15. Corremos el frontend (dejamos correr para que funcione el programa)
+   ```bash
+   npm run dev
+   ```
+
+16. De recomendación, crear los siguientes scripts:
