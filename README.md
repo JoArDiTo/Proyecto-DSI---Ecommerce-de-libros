@@ -116,10 +116,9 @@ Este proyecto es un ecommerce desarrollado para la librería Lecturama, que perm
 14. Instalamos la dependecia npm que requiera el frontend
    ```bash
    npm install
-   
+   ```
+
 15. Corremos el frontend (dejamos correr para que funcione el programa)
    ```bash
    npm run dev
    ```
-
-16. De recomendación, crear los siguientes scripts:
